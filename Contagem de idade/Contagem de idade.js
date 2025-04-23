@@ -5,7 +5,8 @@ let entrada
 while (true)
 {
     ano_nascimento = parseFloat(prompt("Em qual ano você nasceu?"))
-    if (isNaN(ano_nascimento) || !Number.isInteger(ano_nascimento)){
+    if (isNaN(ano_nascimento) || !Number.isInteger(ano_nascimento))
+{
     alert("Por favor, insira uma data válida")
 }
     else {break}
@@ -15,7 +16,8 @@ while (true)
 while(true)
 {
     entrada = parseFloat(prompt("Quantos anos terei em..."))
-    if (isNaN(entrada) || !Number.isInteger(entrada)){
+    if (isNaN(entrada) || !Number.isInteger(entrada))
+{
     alert("Por favor, insira uma data válida")
 }
     else {break}

@@ -3,7 +3,7 @@ let i = 2
 while (true)
 {
     numero = parseFloat(prompt("Insira um número maior que 0 e menor que 100"))
-    if (isNaN(numero) || !Number.isInteger(numero) || numero >= 100) 
+    if (isNaN(numero) || !Number.isInteger(numero) || numero >= 100 || numero == 0) 
         {
             alert("Por favor insira um valor válido.")
         }
