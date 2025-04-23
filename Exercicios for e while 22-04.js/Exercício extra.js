@@ -5,7 +5,7 @@ while (true)
     numero = parseFloat(prompt("Insira um número maior que 0 e menor que 100"))
     if (isNaN(numero) || !Number.isInteger(numero) || numero >= 100) 
         {
-            alert("Por favor insira um valor válido")
+            alert("Por favor insira um valor válido.")
         }
     else {break}
 }
@@ -22,7 +22,7 @@ if (!Number.isInteger(numero/2)) {
 else
 { 
     if (Number.isInteger(numero/2)) {
-        console.log("Os próximos números pares até o 100 após o " + numero + " serão")
+        console.log("Os próximos números pares até o 100 após o " + numero + " serão:")
     do{
         console.log(numero + i)
         i++
