@@ -1,7 +1,4 @@
-let i = 0
-do 
-{
-    console.log(5 * i)
-    i++
-}
-while (i<=10)
+for (i = 0; i<=10; i++)
+    {
+        console.log(5 * i)
+    }
