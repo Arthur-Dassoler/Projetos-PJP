@@ -9,7 +9,7 @@ while (true)
     }
     else {break}
 }
-console.log("Tábuada do " + numero)
+console.log("Tabuada do " + numero)
 do 
 {
     console.log(numero * i)
