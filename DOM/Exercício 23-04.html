@@ -1,0 +1,47 @@
+Calculadora simples
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora simples</title>
+
+    <script>
+        function soma()
+        {
+            const NUMERO_UM = parseFloat(document.getElementById("Numero1").value)
+            const NUMERO_DOIS = parseFloat(document.getElementById("Numero2").value)
+            const resultado = NUMERO_UM + NUMERO_DOIS
+            document.getElementById("Resultado").innerHTML = 
+            "Essa soma resulta em " + resultado 
+        }
+
+        function subtracao() 
+        {
+            const NUMERO_UM = parseFloat(document.getElementById("Numero1").value)
+            const NUMERO_DOIS = parseFloat(document.getElementById("Numero2").value)
+            const resultado = NUMERO_UM - NUMERO_DOIS
+            document.getElementById("Resultado").innerHTML = 
+            "Essa subtração resulta em " + resultado
+        }
+
+        function divisao()
+        {
+            const NUMERO_UM = parseFloat(document.getElementById("Numero1").value)
+            const NUMERO_DOIS = parseFloat(document.getElementById("Numero2").value)
+            const resultado = (NUMERO_UM / NUMERO_DOIS)
+            document.getElementById("Resultado").innerHTML = 
+            "Essa divisão resulta em " + resultado
+        }
+    </script>
+
+</head>
+<body>
+    <input id="Numero1" type="number">
+    <input id="Numero2" type="number">
+    <button id="botaoSoma" onclick="soma()">Somar</button>
+    <button id="botaoSubtracao" onclick="subtracao()">Subtrair</button>
+    <button id="botaoDivisao" onclick="divisao()">Dividir</button>
+    <div id="Resultado">O resultado será exibido aqui!</div>
+</body>
+</html>

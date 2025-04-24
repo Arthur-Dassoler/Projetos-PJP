@@ -3,10 +3,18 @@
     <title>Exemplo</title>
     <script>
       const TEXTO = document.getElementById("meuInput").value;
-      console.log(TEXTO)
-    </script>
+
+      function processar() 
+            {
+            document.getElementById("resultado").innerHTML = 
+            "Olá " + document.getElementById("meuInput").value + "!";
+            }
+
+    </script>                
   </head>
   <body>
     <input id="meuInput" type="text">  
+    <button id="meuBotao" onclick="processar()">Clique Aqui</button>
+    <div id="resultado">O resultado aparecerá aqui</div>
   </body>
 </html>
