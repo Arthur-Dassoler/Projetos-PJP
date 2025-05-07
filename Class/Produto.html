@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+
+
+
+
+<!-- Não finalizado -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+
+    <script>
+        class Produto {
+            constructor(nome, preco, quantidade) {
+                this.nome = nome
+                this.preco = parsefloat(preco)
+                this.quantidade = quantidade
+            }
+
+            mostrarnome() {
+                console.log(this.nome)
+            }
+
+            mostrarpreco() {
+                let preco = document.getElementById("inputpreco").value.trim()
+                document.getElementById("divpreco").innerHTML =
+                "O preço do(a) " + this.nome + " é de " + preco
+            }
+
+            mostrarquantidade() {
+                console.log("A quantidade exata desse produto é de " + this.quantidade + " unidades")
+            }
+
+            valorestoque() {
+                console.log("O valor total dessa compra deu " + this.preco * this.quantidade + " reais")
+            }
+        }
+        let produto1 = new Produto(document.getElementById("inputnome"), document.getElementById("inputpreco"), document.getElementById("inputquantidade"))
+
+        produto1.mostrarnome()
+        produto1.mostrarpreco()
+        produto1.mostrarquantidade()
+        produto1.valorestoque()
+    </script>
+</head>
+
+<body>
+    <input id="inputnome" type="text" placeholder="Digite o nome do produto aqui">
+    <input id="inputpreco" type="text" placeholder="Digite o preco aqui">
+    <input id="inputquantidade" type="text" placeholder="Digite a quantidade aqui">
+    <button id="botaonome" onclick="mostrarnome()">Mostrar nome</button>
+    <button id="botaopreco" onclick="mostrarpreco()">Mostrar preco</button>
+    <button id="botaoquantidade" onclick="mostrarquantidade()">Mostrar quantidade</button>
+    <button id="botaoestoque" onclick="mostrarestoque()">Mostrar valor total no estoque</button>
+    <div id="divnome">Aqui estará o nome</div>
+    <div id="divpreco">Aqui estará o preço</div>
+    <div id="divquantidade">Aqui estará a quantidade</div>
+    <div id="divestoque">Aqui estará o valor do estoque</div>
+</body>
+
+</html>
