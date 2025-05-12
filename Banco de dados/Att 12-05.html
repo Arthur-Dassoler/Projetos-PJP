@@ -83,34 +83,32 @@
         };
         // Função para adicionar um aluno ao banco de dados
         function adicionarAluno() {
-            // Se o banco de dados ainda não estiver carregado, exibe um alerta
             if (!db) {
                 alert("Banco de dados não carregado ainda. Tente novamente.");
                 return;
             }
 
-            // Obtém os valores dos campos de entrada e remove espaços extras
             const nome = document.getElementById("nome").value.trim();
             const email = document.getElementById("email").value.trim();
             const conceitos = document.getElementById("conceitos").value.trim();
 
-            // Verifica se os campos estão preenchidos
             if (!nome || !email || !conceitos) {
                 alert("Preencha todos os campos!");
                 return;
-            }   
-        }
-         // Cria uma transação no banco de dados em modo de escrita
-         const transaction = db.transaction(["alunos"], "readwrite");
+            }
+
+            if (!email.includes("@")) {
+                alert("E-mail inválido!")
+                return
+            }
+
+            const transaction = db.transaction(["alunos"], "readwrite");
             const store = transaction.objectStore("alunos");
 
-            // Cria um objeto representando o aluno
             const aluno = { nome, email, conceitos };
 
-            // Adiciona o aluno ao banco de dados
             const request = store.add(aluno);
 
-            // Quando o aluno for adicionado com sucesso, limpa os campos e atualiza a lista
             request.onsuccess = function () {
                 listarAlunos();
                 document.getElementById("nome").value = "";
@@ -118,11 +116,10 @@
                 document.getElementById("conceitos").value = "";
             };
 
-            // Se houver erro ao adicionar o aluno, exibe um alerta
             request.onerror = function () {
                 alert("Erro ao adicionar aluno.");
             };
-             // Função para listar os alunos cadastrados
+        }
         function listarAlunos() {
             // Se o banco de dados ainda não estiver carregado, exibe um aviso e sai da função
             if (!db) {
